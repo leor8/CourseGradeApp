@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="20px"
+    tools:context=".MainActivity">
+
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dip"
+        android:layout_weight="7"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TableRow
+            android:id="@+id/assignments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ff9bddff"
+            android:gravity="center"
+            android:minHeight="180px">
+
+            <TextView
+                android:id="@+id/assignment_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="20dip"
+                android:text="Assignments (15%)"
+                android:textColor="#000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/assignment_input"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:ems="10"
+                android:inputType="number|numberDecimal"
+                android:maxLength="5"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/black_cursor" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/part"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#fbf063"
+            android:gravity="center"
+            android:minHeight="180px">
+
+            <TextView
+                android:id="@+id/part_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="20dip"
+                android:text="Participation (15%)"
+                android:textColor="#000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/part_input"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:ems="10"
+                android:inputType="number|numberDecimal"
+                android:maxLength="5"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/black_cursor" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/project"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#30ff3e"
+            android:gravity="center"
+            android:minHeight="180px">
+
+            <TextView
+                android:id="@+id/project_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="20dip"
+                android:text="Projects (20%)"
+                android:textColor="#000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/project_input"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:ems="10"
+                android:inputType="number|numberDecimal"
+                android:maxLength="5"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/black_cursor" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/quiz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#AFE0E0"
+            android:gravity="center"
+            android:minHeight="180px">
+
+            <TextView
+                android:id="@+id/quiz_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="20dip"
+                android:text="Quizzes (20%)"
+                android:textColor="#000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/quiz_input"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:ems="10"
+                android:inputType="number|numberDecimal"
+                android:maxLength="5"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/black_cursor" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/exam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ffa500"
+            android:gravity="center"
+            android:minHeight="180px">
+
+            <TextView
+                android:id="@+id/exam_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="20dip"
+                android:text="Exam (30%)"
+                android:textColor="#000"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/exam_input"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@android:color/black"
+                android:text="80"
+                android:ems="10"
+                android:inputType="number|numberDecimal"
+                android:maxLength="5"
+                android:textColor="@android:color/black"
+                android:textCursorDrawable="@drawable/black_cursor" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/exam_seek"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#ffa500"
+            android:gravity="center"
+            android:minHeight="180px" >
+
+            <TextView
+                android:id="@+id/exam_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="20dip"
+                android:text="Set Exam Mark:"
+                android:textColor="#000"
+                android:textSize="14sp" />
+
+            <SeekBar
+                android:id="@+id/exam_seek_bar"
+                android:layout_width="0dip"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:indeterminate="false"
+                android:max="100"
+                android:progress="80" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/final_exam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#ff0000"
+            android:gravity="center"
+            android:minHeight="180px">
+
+            <TextView
+                android:id="@+id/final_text"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:paddingStart="20dip"
+                android:text="Final"
+                android:textColor="#fff"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/final_input"
+                android:layout_width="0dip"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="0"
+                android:textColor="#fff"
+                android:textStyle="bold"
+                android:textSize="22sp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="1309px"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp">
+
+        <Button
+            android:id="@+id/reset"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Reset All" />
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
