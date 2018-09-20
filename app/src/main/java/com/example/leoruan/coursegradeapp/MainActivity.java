@@ -17,6 +17,7 @@ import java.io.Serializable;
 public class MainActivity extends AppCompatActivity implements TextWatcher, View.OnClickListener, SeekBar.OnSeekBarChangeListener
 {
 
+    // Text listeners and number holders
     private double assignment;
     private EditText assign_text;
 
@@ -33,10 +34,24 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
 
     private TextView final_display;
 
+    // Seek bar holders
     private double exam = 80;
     private SeekBar exam_seek;
 
+    // Reset button
     private Button reset;
+
+    // Final grade
+    private double final_grade;
+
+    // State Saving keys
+    private static final String ASSIGNEMENT = "ASSIGNMENT";
+    private static final String PARTICIPATION = "PARTICIPATION";
+    private static final String PROJECT = "PROJECT";
+    private static final String QUIZ = "QUIZ";
+    private static final String EXAM = "EXAM";
+    private static final String FINAL = "FINAL";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
 
     private void display_final() {
         if (assignment != 0 && part != 0 && project != 0 && quiz != 0 && exam != 0){
-            double final_grade = (assignment * 15 / 100) + (part * 15 / 100) + (project * 20 / 100) + (quiz * 20 / 100)
+            final_grade = (assignment * 15 / 100) + (part * 15 / 100) + (project * 20 / 100) + (quiz * 20 / 100)
                     + (exam * 30 / 100);
             if(final_grade > 100 || final_grade < 0) {
                 Toast.makeText(getApplicationContext(), "You have entered illegal grade(s)", Toast.LENGTH_LONG).show();
@@ -180,5 +195,39 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
     @Override
     public void beforeTextChanged(CharSequence s, int start, int count, int after){
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState){
+        super.onSaveInstanceState(outState);
+
+        outState.putDouble(ASSIGNEMENT, assignment);
+        outState.putDouble(PARTICIPATION, part);
+        outState.putDouble(PROJECT, project);
+        outState.putDouble(QUIZ, quiz);
+        outState.putDouble(EXAM, exam);
+        outState.putDouble(FINAL, final_grade);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+//        savedInstanceState.putDouble(ASSIGNEMENT, assignment);
+//        savedInstanceState.putDouble(PARTICIPATION, part);
+//        savedInstanceState.putDouble(PROJECT, project);
+//        savedInstanceState.putDouble(QUIZ, quiz);
+//        savedInstanceState.putDouble(EXAM, exam);
+//        savedInstanceState.putDouble(FINAL, final_grade);
+
+        assignment = savedInstanceState.getDouble(ASSIGNEMENT);
+        part = savedInstanceState.getDouble(PARTICIPATION);
+        project = savedInstanceState.getDouble(PROJECT);
+        quiz = savedInstanceState.getDouble(QUIZ);
+        exam = savedInstanceState.getDouble(EXAM);
+        final_grade = savedInstanceState.getDouble(FINAL);
+
+        display_final();
+    }
+
 
 }
