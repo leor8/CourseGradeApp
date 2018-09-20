@@ -96,16 +96,16 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
     @Override
     public void onClick(View v){
         assign_text.setText("");
-        assignment = 0.0;
+        assignment = null;
 
         part_text.setText("");
-        part = 0.0;
+        part = null;
 
         project_text.setText("");
-        project = 0.0;
+        project = null;
 
         quiz_text.setText("");
-        quiz = 0.0;
+        quiz = null;
 
         exam_text.setText("80");
         exam = 80.0;
