@@ -18,16 +18,16 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
 {
 
     // Text listeners and number holders
-    private double assignment;
+    private Double assignment;
     private EditText assign_text;
 
-    private double part;
+    private Double part;
     private EditText part_text;
 
-    private double project;
+    private Double project;
     private EditText project_text;
 
-    private double quiz;
+    private Double quiz;
     private EditText quiz_text;
 
     private EditText exam_text;
@@ -35,14 +35,14 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
     private TextView final_display;
 
     // Seek bar holders
-    private double exam = 80;
+    private Double exam = 80.0;
     private SeekBar exam_seek;
 
     // Reset button
     private Button reset;
 
     // Final grade
-    private double final_grade;
+    private Double final_grade;
 
     // State Saving keys
     private static final String ASSIGNEMENT = "ASSIGNMENT";
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
     }
 
     private void display_final() {
-        if (assignment != 0 && part != 0 && project != 0 && quiz != 0 && exam != 0){
+        if (assignment != null && part != null && project != null && quiz != null && exam != null){
             final_grade = (assignment * 15 / 100) + (part * 15 / 100) + (project * 20 / 100) + (quiz * 20 / 100)
                     + (exam * 30 / 100);
             if(final_grade > 100 || final_grade < 0) {
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        exam = seekBar.getProgress();
+        exam = (double)seekBar.getProgress();
         exam_text.setText(String.format("%.00f", exam));
         display_final();
     }
@@ -211,13 +211,6 @@ public class MainActivity extends AppCompatActivity implements TextWatcher, View
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-
-//        savedInstanceState.putDouble(ASSIGNEMENT, assignment);
-//        savedInstanceState.putDouble(PARTICIPATION, part);
-//        savedInstanceState.putDouble(PROJECT, project);
-//        savedInstanceState.putDouble(QUIZ, quiz);
-//        savedInstanceState.putDouble(EXAM, exam);
-//        savedInstanceState.putDouble(FINAL, final_grade);
 
         assignment = savedInstanceState.getDouble(ASSIGNEMENT);
         part = savedInstanceState.getDouble(PARTICIPATION);
